@@ -1,0 +1,111 @@
+{
+  "crs": "EPSG:32643",
+  "resolution_m": 30,
+  "width": 1125,
+  "height": 1109,
+  "transform": [
+    30.0,
+    0.0,
+    684450.0,
+    0.0,
+    -30.0,
+    3162870.0,
+    0.0,
+    0.0,
+    1.0
+  ],
+  "bounds": [
+    684450,
+    3129600,
+    718200,
+    3162870
+  ],
+  "municipal_area_km2": 298.2741825065611,
+  "municipal_grid_area_km2": 298.278,
+  "boundary_status": "GMDA flood_survey_2 MCG_Boundary snapshot; legal currency unverified",
+  "buffer_m": 5000,
+  "buffer_status": "Staging extent; upstream catchment completeness unverified",
+  "vertical_conversion": {
+    "valid_pixels": 331420,
+    "coverage_percent": 100.0,
+    "min_m": -0.1991424560546875,
+    "p05_m": -0.16690081357955933,
+    "median_m": -0.1092681884765625,
+    "mean_m": -0.10824767500162125,
+    "p95_m": -0.0491790771484375,
+    "max_m": -0.027496337890625
+  },
+  "quality_class_counts": {
+    "ALOS_MSK": {
+      "0": 330222,
+      "48": 1198
+    },
+    "ALOS_STK": {
+      "0": 16,
+      "1": 204,
+      "2": 1021,
+      "3": 6178,
+      "4": 70263,
+      "5": 145066,
+      "6": 48050,
+      "7": 39585,
+      "8": 16091,
+      "9": 4646,
+      "10": 284,
+      "11": 16
+    },
+    "Copernicus_EDM": {
+      "1": 326754,
+      "2": 2249,
+      "3": 373,
+      "4": 1696,
+      "9": 334,
+      "11": 14
+    },
+    "Copernicus_FLM": {
+      "1": 2417,
+      "2": 326754,
+      "3": 49,
+      "5": 2200
+    },
+    "Copernicus_WBM": {
+      "0": 331086,
+      "2": 334
+    }
+  },
+  "products": [
+    {
+      "dataset": "SRTM_2000",
+      "valid_pixels": 331420,
+      "coverage_percent": 100.0,
+      "min_m": 174.7733612060547,
+      "p05_m": 213.72853088378906,
+      "median_m": 230.45701599121094,
+      "mean_m": 237.06671142578125,
+      "p95_m": 294.8061828613281,
+      "max_m": 321.0
+    },
+    {
+      "dataset": "ALOS_2006_2011",
+      "valid_pixels": 331420,
+      "coverage_percent": 100.0,
+      "min_m": 207.65591430664062,
+      "p05_m": 213.14605712890625,
+      "median_m": 230.08297729492188,
+      "mean_m": 236.64657592773438,
+      "p95_m": 293.509033203125,
+      "max_m": 319.7352294921875
+    },
+    {
+      "dataset": "Copernicus_2011_2014_primary",
+      "valid_pixels": 331420,
+      "coverage_percent": 100.0,
+      "min_m": 206.41334533691406,
+      "p05_m": 212.52835083007812,
+      "median_m": 230.2328643798828,
+      "mean_m": 236.55764770507812,
+      "p95_m": 294.20062255859375,
+      "max_m": 320.5446472167969
+    }
+  ]
+}

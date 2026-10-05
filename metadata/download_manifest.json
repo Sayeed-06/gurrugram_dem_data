@@ -1,0 +1,117 @@
+{
+  "downloads": [
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E076_00_DEM/AUXFILES/Copernicus_DSM_COG_10_N28_00_E076_00_EDM.tif",
+      "file": "raw/Copernicus_DSM_COG_10_N28_00_E076_00_EDM.tif",
+      "bytes": 162733,
+      "sha256": "b95401f311f6dcafa7e7fd4a9f1e384abb7491f0cdca9deeac2dd693674c9d6f",
+      "retrieved_utc": "2026-09-26T22:29:36.704171+00:00"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E076_00_DEM/AUXFILES/Copernicus_DSM_COG_10_N28_00_E076_00_FLM.tif",
+      "file": "raw/Copernicus_DSM_COG_10_N28_00_E076_00_FLM.tif",
+      "bytes": 155259,
+      "sha256": "bb34f6ae847a4ccaf7de90de1948492eff9cafaf002524d5ab2d8adee080e79a",
+      "retrieved_utc": "2026-09-26T22:29:38.010202+00:00"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E076_00_DEM/AUXFILES/Copernicus_DSM_COG_10_N28_00_E076_00_WBM.tif",
+      "file": "raw/Copernicus_DSM_COG_10_N28_00_E076_00_WBM.tif",
+      "bytes": 61253,
+      "sha256": "5ffc44b3d71fa99d2d8c55670b658dd9b0a2a5ebaaab6964d8cf9eefbc72a1a2",
+      "retrieved_utc": "2026-09-26T22:29:39.356626+00:00"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E076_00_DEM/Copernicus_DSM_COG_10_N28_00_E076_00_DEM.tif",
+      "file": "raw/Copernicus_DSM_COG_10_N28_00_E076_00_DEM.tif",
+      "bytes": 40529701,
+      "sha256": "827adf975ce68fea8ac5f53844284e7441dac0d74b8b780237ed530bb1e9fde5",
+      "retrieved_utc": "2026-09-26T22:29:39.656740+00:00"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E076_00_DEM/Copernicus_DSM_10_N28_00_E076_00.xml",
+      "file": "metadata/Copernicus_DSM_10_N28_00_E076_00.xml",
+      "bytes": 44710,
+      "sha256": "8d51a03db0b5fdfe7d847acf37dfde8bdf65b63744ba4fba2510cc19f26ca52d",
+      "retrieved_utc": "2026-09-26T22:29:40.315403+00:00"
+    },
+    {
+      "url": "https://opentopography.s3.sdsc.edu/raster/SRTM_GL1/SRTM_GL1_srtm/N28E076.tif",
+      "file": "raw/SRTM_N28E076.tif",
+      "bytes": 8925284,
+      "sha256": "ad331b6222ad45bacef64d59f69c6fccac8ca1a2dfaccab18739991e0086ae2c",
+      "retrieved_utc": "2026-09-26T22:29:42.070720+00:00"
+    },
+    {
+      "url": "https://opentopography.s3.sdsc.edu/raster/SRTM_GL1/SRTM_GL1_srtm/N28E077.tif",
+      "file": "raw/SRTM_N28E077.tif",
+      "bytes": 8162591,
+      "sha256": "8f20d91465d7b1c21bbf43e7bf22cb7b75201382c45c59d7865b8b5704e5cc92",
+      "retrieved_utc": "2026-09-26T22:29:43.090382+00:00"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E077_00_DEM/AUXFILES/Copernicus_DSM_COG_10_N28_00_E077_00_EDM.tif",
+      "file": "raw/Copernicus_DSM_COG_10_N28_00_E077_00_EDM.tif",
+      "bytes": 265741,
+      "sha256": "1ba949dc901ad1e51baed31d354eae3dd211cb57f27c3193e7b4908c6f4f4485",
+      "retrieved_utc": "2026-09-26T22:29:44.759582+00:00"
+    },
+    {
+      "url": "https://www.eorc.jaxa.jp/ALOS/aw3d30/data/release_v2404/N025E075/N028E076.zip",
+      "file": "raw/ALOS_N028E076.zip",
+      "bytes": 8306705,
+      "sha256": "afe5a27c211f8da3def11afd59d87603c50a6a569a2c8d6a4190091faf81df63",
+      "retrieved_utc": "2026-09-26T22:29:45.130688+00:00"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E077_00_DEM/AUXFILES/Copernicus_DSM_COG_10_N28_00_E077_00_WBM.tif",
+      "file": "raw/Copernicus_DSM_COG_10_N28_00_E077_00_WBM.tif",
+      "bytes": 128985,
+      "sha256": "d71b192f2474db534b72c86fe6a69499416adda0ac7b5dea09582e77d85031d4",
+      "retrieved_utc": "2026-09-26T22:29:46.412611+00:00"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E077_00_DEM/Copernicus_DSM_COG_10_N28_00_E077_00_DEM.tif",
+      "file": "raw/Copernicus_DSM_COG_10_N28_00_E077_00_DEM.tif",
+      "bytes": 41680243,
+      "sha256": "a8e69d432869bf85a63b7cfcaa61b5a770c7705125b3cfde9b892d65dfed98b4",
+      "retrieved_utc": "2026-09-26T22:29:46.462423+00:00"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E077_00_DEM/AUXFILES/Copernicus_DSM_COG_10_N28_00_E077_00_FLM.tif",
+      "file": "raw/Copernicus_DSM_COG_10_N28_00_E077_00_FLM.tif",
+      "bytes": 252094,
+      "sha256": "b333edf995f6b389d020b519b7b058599d5de17566f4cb0fc041a66d5bc8aadf",
+      "retrieved_utc": "2026-09-26T22:29:46.766804+00:00"
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N28_00_E077_00_DEM/Copernicus_DSM_10_N28_00_E077_00.xml",
+      "file": "metadata/Copernicus_DSM_10_N28_00_E077_00.xml",
+      "bytes": 44698,
+      "sha256": "2beab12cde235f08c08c3cb5acf5238c3ff99ae2963de95d3379df4f45daafa2",
+      "retrieved_utc": "2026-09-26T22:29:47.274667+00:00"
+    },
+    {
+      "url": "https://www.eorc.jaxa.jp/ALOS/aw3d30/data/release_v2404/N025E075/N028E077.zip",
+      "file": "raw/ALOS_N028E077.zip",
+      "bytes": 8695634,
+      "sha256": "e844ac427397a6fec0c9e19b3bfb77b410fab086862ed3314e054b3b485f259d",
+      "retrieved_utc": "2026-09-26T22:29:49.871010+00:00"
+    },
+    {
+      "url": "https://cdn.proj.org/us_nga_egm96_15.tif",
+      "file": "raw/us_nga_egm96_15.tif",
+      "bytes": 2710815,
+      "sha256": "db493027562c9b004d7220fa881f5603adada4e1c5029b933fa7de4547b0e78d",
+      "retrieved_utc": "2026-09-26T22:29:50.634506+00:00"
+    },
+    {
+      "url": "https://cdn.proj.org/us_nga_egm08_25.tif",
+      "file": "raw/us_nga_egm08_25.tif",
+      "bytes": 80585622,
+      "sha256": "4191d471eefebf24091b56dbc604353cb3b8cf8cc70e448bb9ae56a272bef17a",
+      "retrieved_utc": "2026-09-26T22:29:55.603946+00:00"
+    }
+  ],
+  "failures": []
+}

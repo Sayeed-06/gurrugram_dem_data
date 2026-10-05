@@ -1,0 +1,7 @@
+raw/
+__pycache__/
+*.pyc
+.DS_Store
+*.zip
+webapp/static/timeline-preview.jpg
+webapp/static/dated-maps.json

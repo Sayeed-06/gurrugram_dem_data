@@ -1,0 +1,8 @@
+{
+  "source": "https://onemapdepts.gmda.gov.in/server/rest/services/flood_survey_2/FeatureServer/5",
+  "query": "where=1%3D1&outFields=*&outSR=4326&f=geojson",
+  "retrieved_date": "2026-09-27",
+  "sha256": "5d2bc652317c934cfc32045796052f551f3be049072d0ad8d025b1884167afb9",
+  "legal_boundary_date": "not supplied by layer metadata; not independently verified",
+  "purpose": "consistent municipal reporting mask for all source periods; not historical municipal limits"
+}

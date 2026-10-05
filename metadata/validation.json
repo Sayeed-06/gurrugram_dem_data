@@ -1,0 +1,152 @@
+{
+  "raster_checks": [
+    {
+      "file": "Copernicus_WBM_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "Copernicus_EDM_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "SRTM_2000_EGM96_buffer_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "ALOS_2006_2011_EGM96_city_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "ALOS_MSK_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "DEM_three_epoch_stack_EGM96_city_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 3,
+      "grid_match": true
+    },
+    {
+      "file": "Copernicus_FLM_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "ALOS_STK_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "Copernicus_2011_2014_primary_EGM96_city_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "municipal_mask_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "copernicus_EGM2008_to_EGM96_offset_m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "SRTM_2000_EGM96_city_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "copernicus_native_EGM2008_buffer_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "Copernicus_2011_2014_primary_EGM96_buffer_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    },
+    {
+      "file": "ALOS_2006_2011_EGM96_buffer_30m.tif",
+      "shape": [
+        1109,
+        1125
+      ],
+      "bands": 1,
+      "grid_match": true
+    }
+  ],
+  "municipal_cell_count": 331420,
+  "geoid_offset_PROJ_m": -0.10807543945309561,
+  "geoid_offset_raster_m": -0.10824966430664062,
+  "geoid_check_tolerance_m": 0.005,
+  "status": "passed",
+  "not_validated": [
+    "current legal municipal boundary",
+    "local survey vertical accuracy",
+    "horizontal co-registration against control",
+    "hydrological conditioning",
+    "upstream catchment completeness",
+    "flood performance"
+  ]
+}

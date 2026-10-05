@@ -1,0 +1,134 @@
+[
+  {
+    "file": "DEM_comparison.png",
+    "sha256": "47676c95f4538d0555d1da8e05b10de62ffd08c37ca9048339381a4122221d32"
+  },
+  {
+    "file": "README.md",
+    "sha256": "b95c1d91b0bd4ef27322f5a5bc57c47bc055928b75259f533a9c1fa0754733c5"
+  },
+  {
+    "file": "boundary/mcg_boundary.geojson",
+    "sha256": "5d2bc652317c934cfc32045796052f551f3be049072d0ad8d025b1884167afb9"
+  },
+  {
+    "file": "metadata/Copernicus_DSM_10_N28_00_E076_00.xml",
+    "sha256": "8d51a03db0b5fdfe7d847acf37dfde8bdf65b63744ba4fba2510cc19f26ca52d"
+  },
+  {
+    "file": "metadata/Copernicus_DSM_10_N28_00_E077_00.xml",
+    "sha256": "2beab12cde235f08c08c3cb5acf5238c3ff99ae2963de95d3379df4f45daafa2"
+  },
+  {
+    "file": "metadata/boundary_provenance.json",
+    "sha256": "ac5253bdf94edbacbcfd097898dbad8e0b8c7121fc3ed96ceef037ae3d222303"
+  },
+  {
+    "file": "metadata/download_manifest.json",
+    "sha256": "8c875effc9a3fadbd67c5fade36f3fda85360ecef3ab383fc53dd8c5fb401d31"
+  },
+  {
+    "file": "metadata/elevation_summary.csv",
+    "sha256": "f7a010839846e35a3e5f9236ce993dafd2956b05d9c14c45e7f9efb8a2d29ce9"
+  },
+  {
+    "file": "metadata/mcg_layer_metadata.json",
+    "sha256": "4e706070bcdfb58c3c7004436c78d9a8e592bed13b7757439858bbb8cb311f9b"
+  },
+  {
+    "file": "metadata/processing_log.json",
+    "sha256": "b7a8c5b6661cb34fcbd650ae41b832356eba422e4a111fe2d9e06d872b335493"
+  },
+  {
+    "file": "metadata/processing_report.json",
+    "sha256": "f4347cdd97c798f823fd7db1954ff4dee8af309f1c39702c8076f54f3c79ac51"
+  },
+  {
+    "file": "metadata/source_inventory.csv",
+    "sha256": "33e3c3b26ffa19dfdb641880ba583d697ea660f796bc77b07bdde9084795dd4f"
+  },
+  {
+    "file": "metadata/validation.json",
+    "sha256": "0a0ecd6aa11fe35c92c5fb245a029428d5ff5d3edc174f5cc62db41b888c8e54"
+  },
+  {
+    "file": "metadata/validation_log.json",
+    "sha256": "3b658c76bb15f1c71fd11c529fb8bb070684a21e890a8f96baf3d1c33ba5e14b"
+  },
+  {
+    "file": "municipal_elevation_cells.csv.gz",
+    "sha256": "8b95b67c861d3aa62170e81db82f1f5fbe7e75bb9dabe487fdbf5124d8e2cecd"
+  },
+  {
+    "file": "processed/ALOS_2006_2011_EGM96_buffer_30m.tif",
+    "sha256": "ecd9bab50a01ecf24dc091cc329da699af4d4f74b44a35216f44eb8cd7b80d62"
+  },
+  {
+    "file": "processed/ALOS_2006_2011_EGM96_city_30m.tif",
+    "sha256": "51022a4bc6658ed77b232b2a26b6d11eb62f88471d295c56ee57e29f4c10ec28"
+  },
+  {
+    "file": "processed/ALOS_MSK_30m.tif",
+    "sha256": "ccbe3edb9f4110d92b68aa6b592298b65c1848d8e8fd71cedab19b9152575d46"
+  },
+  {
+    "file": "processed/ALOS_STK_30m.tif",
+    "sha256": "f77129cc4f2e191034748e9f42c3e5104e5c49a1d822c22e5d2d226b96b5f284"
+  },
+  {
+    "file": "processed/Copernicus_2011_2014_primary_EGM96_buffer_30m.tif",
+    "sha256": "4c474dfc9f58c24be7a9ac1d5c14c41ee129b046cfda5a1a46c351c36aa4e3e0"
+  },
+  {
+    "file": "processed/Copernicus_2011_2014_primary_EGM96_city_30m.tif",
+    "sha256": "d2604f920bad2cf89fff4251b7deadd9f6741e00934fb721b7d09fd2cc1f4b9b"
+  },
+  {
+    "file": "processed/Copernicus_EDM_30m.tif",
+    "sha256": "c995f2bfc132121a9c110c7e870bab6f21f483e63fd77e11a71f866db96adc5a"
+  },
+  {
+    "file": "processed/Copernicus_FLM_30m.tif",
+    "sha256": "46ed5dae198db02f33fc97dea59410f2f7a0cc18db2450d3e4751b41c85047ae"
+  },
+  {
+    "file": "processed/Copernicus_WBM_30m.tif",
+    "sha256": "f98cb7041318f6d4c6d7bfd69e87be7c205d8450442c929e0f71c9c56a6e7d05"
+  },
+  {
+    "file": "processed/DEM_three_epoch_stack_EGM96_city_30m.tif",
+    "sha256": "0cb26ff96b4c1f3bf7bb9636efacfe2a22f5e532f741f8ae4b7c194c28ad9804"
+  },
+  {
+    "file": "processed/SRTM_2000_EGM96_buffer_30m.tif",
+    "sha256": "a758831efe7532b3b4b3392d21539f55c998620b5b97b77a9a3819a79c226a71"
+  },
+  {
+    "file": "processed/SRTM_2000_EGM96_city_30m.tif",
+    "sha256": "18cb9690e70e67e8442d9bc11b535107c8aa40f102fe02eff313db3f4b5e7dc3"
+  },
+  {
+    "file": "processed/copernicus_EGM2008_to_EGM96_offset_m.tif",
+    "sha256": "ec8e013bb354c7bd80c288c84ee11ff3b5957dacfb49da82638f41c40136881f"
+  },
+  {
+    "file": "processed/copernicus_native_EGM2008_buffer_30m.tif",
+    "sha256": "dc41bdc58c8c666219aa0e33c7a3322ee2548ab3f23f4e1e4cc150f231db2fa1"
+  },
+  {
+    "file": "processed/municipal_mask_30m.tif",
+    "sha256": "57bcfb28127a6914c3c94ef48ee1eb8a851ffc8ba15aae4b8f7635ecd44aa030"
+  },
+  {
+    "file": "scripts/download.py",
+    "sha256": "4d7c76f1ff28b63f012c009f70fb9f40415005dcbffaf8f46f5a4aeb5b96c169"
+  },
+  {
+    "file": "scripts/package.py",
+    "sha256": "48e58bdf2d57e8629b8c975de3e71a43e3b56b2071a6b8a880cef4c91a311242"
+  },
+  {
+    "file": "scripts/process.py",
+    "sha256": "47754ebb1d70cce3a9f2a4962d4107477fa1f407e656e6854e1a1b74aba7dfa9"
+  }
+]

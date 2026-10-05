@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Gurugram DEM Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div>
+        <p class="eyebrow">Terrain explorer · Gurugram municipal area</p>
+        <h1>DEM & acquisition explorer</h1>
+      </div>
+      <div class="header-note">30 m common grid · EGM96 elevations</div>
+    </header>
+    <main>
+      <aside class="controls" aria-label="DEM controls">
+        <section>
+          <p class="label">View a DEM</p>
+          <div id="demOptions" class="choice-group" role="radiogroup">
+            <button class="choice active" data-dem="srtm">SRTM <span>2000</span></button>
+            <button class="choice" data-dem="alos">ALOS <span>2006–11</span></button>
+            <button class="choice" data-dem="copernicus">Copernicus <span>2011–14</span></button>
+          </div>
+        </section>
+        <section>
+          <div class="row"><p class="label">DEM comparison</p><output id="periodOutput">February 2000</output></div>
+          <input id="timeSlider" type="range" min="0" max="2" value="0" step="1" aria-label="DEM acquisition period" />
+          <div class="time-labels"><span>2000</span><span>2006–11</span><span>2011–14</span></div>
+        </section>
+        <section>
+          <label class="label" for="mapMode">Map mode</label>
+          <select id="mapMode"><option value="composite">Product composite</option><option value="dated">Dated elevation maps</option></select>
+          <div id="datedControls" hidden>
+            <div class="row"><label for="datedSlider">Map date</label><output id="datedDate">No dated maps</output></div>
+            <input id="datedSlider" type="range" min="0" max="0" value="0" step="1" disabled aria-label="Dated elevation map" />
+            <button id="datedPlay" type="button" disabled>Play dates</button>
+            <p id="datedStatus" class="small" role="status"></p>
+            <label class="small" for="datedImport">Load prepared dated maps</label>
+            <input id="datedImport" type="file" accept=".json,application/json" />
+            <p class="small">Files stay on this device. Each map needs a measured acquisition date; composite observation lists cannot supply these maps.</p>
+          </div>
+        </section>
+        <section>
+          <div class="row"><p class="label">Layer opacity</p><output id="opacityOutput">100%</output></div>
+          <input id="opacitySlider" type="range" min="20" max="100" value="100" step="5" aria-label="Layer opacity" />
+        </section>
+        <section>
+          <p class="label">Difference baseline</p>
+          <select id="baselineSelect" aria-label="Difference baseline DEM">
+            <option value="srtm">SRTM · 2000</option>
+            <option value="alos">ALOS · 2006–11</option>
+          </select>
+          <p id="differenceFormula" class="small">Select ALOS or Copernicus to view a difference map.</p>
+        </section>
+        <section class="legend-section">
+          <div class="row"><p class="label">Elevation</p><span>EGM96</span></div>
+          <div class="legend"><span>200 m</span><div></div><span>325 m</span></div>
+          <p class="small">One colour scale is used across every DEM, so heights are visually comparable.</p>
+        </section>
+        <section class="method">
+          <p class="label">Use with care</p>
+          <p class="small">These are surface models from overlapping acquisition windows, not annual observations. They are useful for comparing terrain inputs in drainage screening.</p>
+          <a href="../README.md" target="_blank">Read data notes ↗</a>
+        </section>
+      </aside>
+      <section class="map-panel" aria-label="Interactive DEM maps">
+        <div class="map-toolbar">
+          <div><strong id="mapTitle">SRTM</strong><span id="mapPeriod">February 2000</span></div>
+          <div class="tool-hint">Scroll to zoom · drag to pan · click for time series</div>
+        </div>
+        <div class="map-pair">
+          <div class="map-card">
+            <div class="map-card-header"><strong>Elevation</strong><span id="elevationMapLabel">SRTM · February 2000</span></div>
+            <div id="mapViewport" tabindex="0" aria-label="Elevation map. Click a location to inspect elevation time series.">
+          <div id="mapCanvas"><img id="demLayer" alt="Selected DEM elevation map" draggable="false" /></div>
+          <div id="zoomButtons"><button id="zoomIn" aria-label="Zoom in">+</button><button id="zoomOut" aria-label="Zoom out">−</button><button id="resetView">Reset</button></div>
+            </div>
+          </div>
+          <div class="map-card difference-card">
+            <div class="map-card-header"><strong>Pixel elevation difference</strong><span id="differenceMapLabel">Choose a later DEM</span></div>
+            <div id="differenceViewport" aria-label="Pixel elevation difference map"><img id="differenceLayer" alt="Pixel elevation difference map" draggable="false" /><div id="differenceEmpty">Choose ALOS or Copernicus to compare against a baseline.</div></div>
+            <div class="difference-legend"><span>−20 m</span><div></div><span>0</span><div></div><span>+20 m</span></div>
+          </div>
+        </div>
+        <div id="mapFooter"><span>Municipal reporting extent · 298.3 km²</span><span>UTM Zone 43N</span></div>
+      </section>
+      <aside class="inspector" aria-live="polite">
+        <p class="eyebrow">Point inspector</p>
+        <h2 id="pointTitle">Choose a location</h2>
+        <p id="pointIntro">Click within the municipal area to compare elevation values through time.</p>
+        <div id="pointData" hidden>
+          <div class="coordinates" id="coordinates"></div>
+          <div class="chart-wrap"><svg id="seriesChart" viewBox="0 0 320 180" role="img" aria-label="Elevation time-series chart"></svg></div>
+          <div id="values" class="values"></div>
+          <p class="small warning">Differences can reflect DEM methods, vegetation, buildings, processing and gap filling; they do not establish terrain change.</p>
+        </div>
+      </aside>
+    </main>
+    <section class="acquisition-panel" aria-label="Detailed acquisition timelines">
+      <div class="acquisition-heading">
+        <div><p class="eyebrow">Source observation history</p><h2>Detailed acquisition timelines</h2></div>
+        <button id="exportTimeline" type="button">Download dates CSV</button>
+      </div>
+      <p class="small">Explore the dates used to assemble each composite. These dates describe the supplied composites. The dated-map mode above uses separately imported surfaces; these observation lists do not supply individual elevation rasters.</p>
+      <div class="timeline-controls">
+        <div class="timeline-tabs" role="group" aria-label="Acquisition timeline source">
+          <button type="button" data-timeline="alos" aria-pressed="true">ALOS observations</button>
+          <button type="button" data-timeline="copernicus" aria-pressed="false">Copernicus acquisition ranges</button>
+        </div>
+        <label>Source tile <select id="timelineTile"><option value="all">Both tiles</option><option value="N028E076">N028E076 · western tile</option><option value="N028E077">N028E077 · eastern tile</option></select></label>
+      </div>
+      <div id="timelineSummary" class="timeline-summary"></div>
+      <svg id="acquisitionChart" viewBox="0 0 900 125" role="img" aria-label="Acquisition dates and tile ranges"></svg>
+      <div class="row"><label for="acquisitionSlider" id="acquisitionSliderLabel">Browse observation dates</label><output id="acquisitionDate"></output></div>
+      <input id="acquisitionSlider" type="range" min="0" max="67" step="1" value="0" aria-label="Browse ALOS observation dates" />
+      <div id="acquisitionDetail" aria-live="polite"></div>
+      <p class="small timeline-scope">Dates cover the whole source tiles. Scene footprints and dates at a clicked city pixel are unverified. Gap-filled pixels may come from other sources or periods.</p>
+      <details class="timeline-next"><summary>Obtaining elevation maps for additional dates</summary><p class="small">ALOS requires dated PRISM stereo scenes and separate DSM processing. Copernicus GLO-30 requires separate dated TanDEM-X surfaces for temporal comparison. DLR TanDEM-X DEM Change Maps are a possible additional source; Gurugram coverage and access have not been checked in this package.</p><a href="https://catalogue.geoservice.dlr.de/web/datasets/tdm30_dcm" target="_blank" rel="noopener">DLR TanDEM-X Change Maps ↗</a></details>
+    </section>
+    <footer>Source layers: SRTM, JAXA ALOS AW3D30, Copernicus GLO-30. Difference maps are source-surface comparisons, not validated terrain-change measurements.</footer>
+    <script src="static/metadata.js"></script>
+    <script src="static/elevations.js"></script>
+    <script src="static/timeline.js"></script>
+    <script src="app.js?v=dated-1"></script>
+    <script src="timeline.js"></script>
+    <script src="static/dated-maps.js"></script>
+    <script src="static/map-palettes.js"></script>
+    <script src="dated-maps.js?v=dated-1"></script>
+  </body>
+</html>

@@ -1,0 +1,7 @@
+dataset,tile,earliest_source_date,latest_source_date,native_vertical_datum,date_scope
+ALOS AW3D30 v4.1,ALPSMLC30_N028E076,20060818,20110421,EGM96,"full tile source-scene list, not city pixel dates"
+ALOS AW3D30 v4.1,ALPSMLC30_N028E077,20060818,20110416,EGM96,"full tile source-scene list, not city pixel dates"
+Copernicus GLO-30 AWS COG tile v01,Copernicus_DSM_10_N28_00_E076_00,2011-05-26T12:51:35.752719Z,2012-12-23T00:56:26.980301Z,EGM2008,tile primary acquisition envelope; external fills excluded
+Copernicus GLO-30 AWS COG tile v01,Copernicus_DSM_10_N28_00_E077_00,2011-01-25T12:52:40.251781Z,2014-03-03T12:53:41.614243Z,EGM2008,tile primary acquisition envelope; external fills excluded
+SRTM GL1 (OpenTopography mirror),N28E076,2000-02-11,2000-02-22,EGM96,mission period; void-fill dates may differ
+SRTM GL1 (OpenTopography mirror),N28E077,2000-02-11,2000-02-22,EGM96,mission period; void-fill dates may differ
