@@ -50,7 +50,7 @@ def main():
     parser.add_argument('--label', required=True)
     parser.add_argument('--provenance', required=True, help='Scene/surface ID and acquisition-date evidence')
     parser.add_argument('--vertical-datum', choices=['EGM96'], required=True, help='Explicitly confirm input elevations are EGM96 metres')
-    parser.add_argument('--output', type=Path, default=STATIC/'dated-maps.json')
+    parser.add_argument('--output', type=Path, default=ROOT/'private_data/dated-maps.json')
     args=parser.parse_args()
     frame=prepare(args.geotiff,args.source,args.date,args.label,args.provenance,args.vertical_datum)
     pack=json.loads(args.output.read_text()) if args.output.exists() else {'version':1,'crs':'EPSG:32643','vertical_datum':'EGM96','frames':[]}
@@ -66,7 +66,7 @@ def main():
     args.output.parent.mkdir(parents=True,exist_ok=True)
     args.output.write_text(encoded)
     args.output.with_suffix('.js').write_text('window.DEM_DATED_MAPS = '+encoded+';\n')
-    print(f'Prepared {len(pack["frames"])} dated maps. Load {args.output.name} in the app, or refresh when using the default output.')
+    print(f'Prepared {len(pack["frames"])} dated maps. Load {args.output} using Load prepared dated maps in the app. Review the source redistribution licence before sharing any package.')
 
 
 if __name__=='__main__':

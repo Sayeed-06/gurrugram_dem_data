@@ -59,9 +59,9 @@ python3 webapp/import_dated_dem.py /path/to/dated_dem.tif \
 ```
 
 The command illustrates the interface; use your actual acquisition date and provenance.
-Repeat for additional dates. Default output updates `static/dated-maps.js` for offline
-and server use. Alternatively use `--output /path/to/maps.json` and choose that JSON
-with **Load prepared dated maps**. Loading replaces the current dated package in
+Repeat for additional dates. Default output is `private_data/dated-maps.json`,
+which is excluded from Git. Choose that JSON with **Load prepared dated maps**
+in either offline or server mode. Loading replaces the current dated package in
 memory; it sends no files to a server. Up to 24 frames per package and 150 MB per
 browser import are supported. Maps may cover only part of the municipal area.
 
@@ -69,3 +69,10 @@ Run the app from the repository root with `python3 webapp/server.py`, or open
 `webapp/index.html` directly. Dated data packages should be reviewed for acquisition
 provenance, co-registration, datum consistency and uncertainty before interpreting
 pixel differences as terrain change.
+
+DLR TanDEM-X EDEM/DCM access requires a registered account. Its standard scientific
+licence prohibits publishing or transferring the original products; do not commit
+those rasters or encoded copies of them to GitHub. The `private_data/` folder is
+ignored by Git for local processing and map packages. DCM dates vary per pixel,
+so preparing dated frames requires the DATE layer as well as the change map and
+matching EDEM reference. See [acquisition status](../DATED_DATA_ACCESS.md).
