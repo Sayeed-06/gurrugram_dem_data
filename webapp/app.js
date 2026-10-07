@@ -15,8 +15,18 @@ function unpackElevations() {
   return embeddedValues;
 }
 selectDem(current);
-function product(key) { return meta.products[key]; }
+function product(key) { return key==='tandemx' ? {...meta.products.alos,label:'TanDEM-X',period:'Dated observations'} : meta.products[key]; }
 function selectDem(key) {
+  if(key==='tandemx') {
+    current=key;document.querySelectorAll('.choice').forEach(b=>b.classList.toggle('active',b.dataset.dem===key));
+    slider.disabled=true;document.querySelector('#periodOutput').textContent='TanDEM-X dates';
+    document.querySelector('#productComparison').hidden=true;
+    document.querySelector('#mapMode').value='dated';
+    document.querySelector('#mapMode option[value="composite"]').disabled=true;
+    window.DEM_DATED_VIEW?.setSource(key);return;
+  }
+  slider.disabled=false;document.querySelector('#mapMode option[value="composite"]').disabled=false;
+  document.querySelector('#productComparison').hidden=false;
   current = key; const p=product(key); layer.src=`static/layers/${key}.png`; title.textContent=p.label; period.textContent=p.period;
   document.querySelector("#periodOutput").textContent=p.period; slider.value=order.indexOf(key);
   document.querySelectorAll(".choice").forEach(b=>b.classList.toggle("active",b.dataset.dem===key));

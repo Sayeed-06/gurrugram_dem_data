@@ -28,6 +28,17 @@ class ExplorerHandler(SimpleHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urlparse(self.path)
+        if parsed.path == '/static/dated-maps.js':
+            local = ROOT / 'private_data/dated-maps.js'
+            if local.exists():
+                body = local.read_bytes()
+                self.send_response(200)
+                self.send_header('Content-Type', 'text/javascript; charset=utf-8')
+                self.send_header('Cache-Control', 'no-store')
+                self.send_header('Content-Length', str(len(body)))
+                self.end_headers()
+                self.wfile.write(body)
+                return
         if parsed.path == "/api/elevation":
             return self.point_elevation(parse_qs(parsed.query))
         if parsed.path == "/README.md":

@@ -1,0 +1,105 @@
+{
+  "source": "DLR TanDEM-X 30m EDEM/DCM",
+  "archives": [
+    {
+      "filename": "TDM1_EDEM_10_N28E076_V01_C.zip",
+      "bytes": 191700874,
+      "sha256": "7ce0751792863138f1e027a6857159f7eabdd9edfb993440af6b477af91e8ef4"
+    },
+    {
+      "filename": "TDM1_DCM__10_N28E076_FIRST1622_V01_C.zip",
+      "bytes": 198423685,
+      "sha256": "ede8db7de424493aab562b5267dfc95af1389ee7a7d70e70015032a60bac83ae"
+    },
+    {
+      "filename": "TDM1_DCM__10_N28E076_LAST1622_V01_C.zip",
+      "bytes": 198850879,
+      "sha256": "4c8d3043ca9032d7d3d0afaa93e2b9753a00b35b25f121d0d2454b0bd05a7f75"
+    },
+    {
+      "filename": "TDM1_EDEM_10_N28E077_V01_C.zip",
+      "bytes": 194888442,
+      "sha256": "359e596373155d5c327e2975deeeeda7c6c58ba158707ec9d3b67eb2396f81a3"
+    },
+    {
+      "filename": "TDM1_DCM__10_N28E077_FIRST1622_V01_C.zip",
+      "bytes": 211456361,
+      "sha256": "3ef401aafe4afa510dbd9bb2eb5673c8e49ad12f31bd90c853792c001080217b"
+    },
+    {
+      "filename": "TDM1_DCM__10_N28E077_LAST1622_V01_C.zip",
+      "bytes": 214159145,
+      "sha256": "8348884c44c21e5c2c7d3353d6fe876eb81fe2ff247a8b192046544a760f8544"
+    }
+  ],
+  "grid": {
+    "width": 1125,
+    "height": 1109,
+    "bounds_utm43n": [
+      684450.0,
+      3129600.0,
+      718200.0,
+      3162870.0
+    ]
+  },
+  "dates": [
+    {
+      "date": "2019-04-10",
+      "pixels": 261307,
+      "coverage_percent": 78.84,
+      "products": [
+        "TDM1_DCM__10_N28E076_FIRST1622_V01_C",
+        "TDM1_DCM__10_N28E076_LAST1622_V01_C",
+        "TDM1_DCM__10_N28E077_FIRST1622_V01_C",
+        "TDM1_DCM__10_N28E077_LAST1622_V01_C"
+      ]
+    },
+    {
+      "date": "2019-04-27",
+      "pixels": 63413,
+      "coverage_percent": 19.13,
+      "products": [
+        "TDM1_DCM__10_N28E077_FIRST1622_V01_C"
+      ]
+    },
+    {
+      "date": "2021-07-30",
+      "pixels": 254393,
+      "coverage_percent": 76.76,
+      "products": [
+        "TDM1_DCM__10_N28E076_LAST1622_V01_C",
+        "TDM1_DCM__10_N28E077_LAST1622_V01_C"
+      ]
+    }
+  ],
+  "quality": [
+    {
+      "tile": "N28E076",
+      "variant": "FIRST",
+      "available_pixels": 63593,
+      "retained_pixels": 62351
+    },
+    {
+      "tile": "N28E076",
+      "variant": "LAST",
+      "available_pixels": 63593,
+      "retained_pixels": 62297
+    },
+    {
+      "tile": "N28E077",
+      "variant": "FIRST",
+      "available_pixels": 268271,
+      "retained_pixels": 262807
+    },
+    {
+      "tile": "N28E077",
+      "variant": "LAST",
+      "available_pixels": 268271,
+      "retained_pixels": 258440
+    }
+  ],
+  "filter": "CIM 1/4; finite HAI 0\u20135 m; invalid elevations/dates excluded",
+  "method": "EDEM_EGM2008 + DCM + project EGM2008-to-EGM96 geoid offset; nearest neighbour; no gap filling",
+  "license": "Scientific/noncommercial use. Licensed rasters and prepared elevation packages remain local.",
+  "limitations": "Earliest/latest available observations per pixel, not an annual series. DSM changes include buildings/vegetation. HAI excludes systematic calibration and phase-unwrapping errors."
+}

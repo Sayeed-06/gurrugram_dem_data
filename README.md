@@ -11,9 +11,14 @@ Open `webapp/index.html` directly, or install `requirements.txt` and run
 
 Choose a DEM and use Product composite mode for the compiled surfaces.
 Dated elevation maps mode supports map switching, playback, pixel differences
-and point inspection for separately prepared dated rasters. No genuine dated
-ALOS or TanDEM-X surfaces are supplied: the date slider stays disabled until
-those layers are loaded. See [dated-map import instructions](webapp/README.md).
+and point inspection for separately prepared dated rasters. The separate TanDEM-X
+view supports locally prepared observations for 2019-04-10, 2019-04-27 and
+2021-07-30, with partial municipal coverage and conservative quality masking.
+Licensed DLR rasters stay local and are excluded from this repository. The local
+server loads a prepared package automatically; other users must obtain authorized
+EDEM/DCM downloads and run the preparation script. No dated ALOS surfaces are
+supplied. See [timeline instructions](webapp/README.md) and
+[download inventory](tandemx_inventory.json).
 
 Raw download files are excluded from Git; download provenance and compiled
 municipal products are included. Synthetic validation maps are not included.

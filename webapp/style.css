@@ -26,3 +26,10 @@ footer { padding:0 20px 18px; color:var(--muted); font-size:11px; }
 @media (max-width:720px) { header { height:auto; padding:16px; align-items:flex-start; gap:10px; flex-direction:column; } main { display:flex; flex-direction:column; padding:10px; } .map-panel { min-height:480px; } #mapViewport,#differenceViewport { min-height:360px; } .tool-hint { display:none; } }
 #datedControls { margin-top:14px; } #datedControls .small { margin:10px 0; } #datedImport { width:100%; font-size:11px; margin:8px 0; } #datedPlay { padding:7px 12px; border:1px solid var(--line); border-radius:6px; background:#eef8f3; color:var(--accent); cursor:pointer; } input:disabled,button:disabled { opacity:.5; cursor:default; }
 #demLayer[hidden], #datedControls[hidden] { display:none; }
+.map-panel { align-self:start; min-height:0; grid-template-rows:auto auto auto; }
+.map-pair { align-items:start; min-height:0; }
+#mapViewport, #differenceViewport { min-height:0; aspect-ratio:1125 / 1109; }
+#differenceLayer { position:absolute; inset:0; }
+label[for=datedBaseline] { display:block; margin-top:12px; }
+label[for=datedBaseline][hidden], #datedBaseline[hidden] { display:none; }
+.value-row b { font-size:11px; text-align:right; }
