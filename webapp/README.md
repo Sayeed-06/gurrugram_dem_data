@@ -28,7 +28,7 @@ python3 gurugram_dem/webapp/generate_assets.py
 - Use the consistent 200–325 m colour scale to compare elevations visually.
 - Explore separate acquisition timelines beneath the maps. ALOS has 68 distinct source-tile dates, with tile filtering, a date slider, scene IDs, path/frame and stereo modes. Copernicus has two tile acquisition ranges with 17 and 22 contributing acquisitions. Download either filtered timeline as CSV.
 
-The acquisition controls browse provenance only; maps continue to show their composite elevation surface. ALOS dates apply to whole tile scene lists, with municipality-specific scene footprints unverified. Copernicus XML supplies acquisition envelopes rather than every individual observation date. No date-specific elevation surfaces are generated from these timelines. 
+The acquisition controls browse provenance only; maps continue to show their composite elevation surface. ALOS dates apply to whole tile scene lists, with municipality-specific scene footprints unverified. Copernicus XML supplies acquisition envelopes rather than every individual observation date. No date-specific elevation surfaces are generated from these timelines.
 
 The time control represents each dataset's acquisition period: SRTM (February 2000), ALOS (2006–2011), and Copernicus (2011–2014 for the downloaded tiles). It is not an annual DEM series. Refer to the parent [data notes](../README.md) for source provenance, quality masks, vertical conversion, and flood-modelling limits.
 
