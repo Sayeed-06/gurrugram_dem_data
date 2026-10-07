@@ -7,7 +7,7 @@ provenance/coverage only; see `tandemx_inventory.json`.
 
 The quality-masked municipal timeline has three dates: 2019-04-10 (78.84% coverage),
 2019-04-27 (19.13%), and 2021-07-30 (76.76%). These are partial observed surfaces,
-not annual coverage. Choose TanDEM-X in the locally served app to use the slider.
+not annual coverage. TanDEM-X was subsequently removed from the app at the user’s request; this file preserves acquisition provenance only.
 
 ## TanDEM-X: viable temporal source, account required
 

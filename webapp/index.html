@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gurugram DEM Explorer</title>
-    <link rel="stylesheet" href="style.css?v=tandemx-3" />
+    <link rel="stylesheet" href="style.css?v=pages-1" />
   </head>
   <body>
     <header>
@@ -22,28 +22,12 @@
             <button class="choice active" data-dem="srtm">SRTM <span>2000</span></button>
             <button class="choice" data-dem="alos">ALOS <span>2006–11</span></button>
             <button class="choice" data-dem="copernicus">Copernicus <span>2011–14</span></button>
-            <button class="choice" data-dem="tandemx">TanDEM-X <span>Dated maps</span></button>
           </div>
         </section>
         <section id="productComparison">
           <div class="row"><p class="label">DEM comparison</p><output id="periodOutput">February 2000</output></div>
           <input id="timeSlider" type="range" min="0" max="2" value="0" step="1" aria-label="DEM acquisition period" />
           <div class="time-labels"><span>2000</span><span>2006–11</span><span>2011–14</span></div>
-        </section>
-        <section>
-          <label class="label" for="mapMode">Map mode</label>
-          <select id="mapMode"><option value="composite">Product composite</option><option value="dated">Dated elevation maps</option></select>
-          <div id="datedControls" hidden>
-            <div class="row"><label for="datedSlider">Map date</label><output id="datedDate">No dated maps</output></div>
-            <input id="datedSlider" type="range" min="0" max="0" value="0" step="1" disabled aria-label="Dated elevation map" />
-            <button id="datedPlay" type="button" disabled>Play dates</button>
-            <label class="small" for="datedBaseline">Dated-map comparison</label>
-            <select id="datedBaseline"><option value="reference">EDEM reference · 2010–15 composite</option><option value="first">Earliest loaded date</option></select>
-            <p id="datedStatus" class="small" role="status"></p>
-            <label class="small" for="datedImport">Load prepared dated maps</label>
-            <input id="datedImport" type="file" accept=".json,application/json" />
-            <p class="small">Files stay on this device. Each map needs a measured acquisition date; composite observation lists cannot supply these maps.</p>
-          </div>
         </section>
         <section>
           <div class="row"><p class="label">Layer opacity</p><output id="opacityOutput">100%</output></div>
@@ -97,7 +81,6 @@
           <div class="coordinates" id="coordinates"></div>
           <div class="chart-wrap"><svg id="seriesChart" viewBox="0 0 320 180" role="img" aria-label="Elevation time-series chart"></svg></div>
           <div id="values" class="values"></div>
-          <p class="small" id="qualityNote" hidden>HAI is the DLR height accuracy indicator in metres, not a complete error bound. It excludes calibration and phase-unwrapping errors.</p>
           <p class="small warning">Differences can reflect DEM methods, vegetation, buildings, processing and gap filling; they do not establish terrain change.</p>
         </div>
       </aside>
@@ -107,7 +90,7 @@
         <div><p class="eyebrow">Source observation history</p><h2>Detailed acquisition timelines</h2></div>
         <button id="exportTimeline" type="button">Download dates CSV</button>
       </div>
-      <p class="small">Explore the dates used to assemble each composite. These dates describe the supplied composites. The dated-map mode above uses separately imported surfaces; these observation lists do not supply individual elevation rasters.</p>
+      <p class="small">Explore the dates used to assemble each composite. These dates describe the supplied composites. The observation lists do not supply individual elevation rasters.</p>
       <div class="timeline-controls">
         <div class="timeline-tabs" role="group" aria-label="Acquisition timeline source">
           <button type="button" data-timeline="alos" aria-pressed="true">ALOS observations</button>
@@ -121,16 +104,13 @@
       <input id="acquisitionSlider" type="range" min="0" max="67" step="1" value="0" aria-label="Browse ALOS observation dates" />
       <div id="acquisitionDetail" aria-live="polite"></div>
       <p class="small timeline-scope">Dates cover the whole source tiles. Scene footprints and dates at a clicked city pixel are unverified. Gap-filled pixels may come from other sources or periods.</p>
-      <details class="timeline-next"><summary>Obtaining elevation maps for additional dates</summary><p class="small">ALOS requires dated PRISM stereo scenes and separate DSM processing. Copernicus GLO-30 is a composite. The separate TanDEM-X view uses licensed DLR EDEM/DCM maps with per-pixel observation dates, earliest/latest coverage and quality masking. Run the local server to load your prepared maps automatically, or load a prepared JSON file. These are surface observations, not a complete annual terrain record.</p><a href="https://catalogue.geoservice.dlr.de/web/datasets/tdm30_dcm" target="_blank" rel="noopener">DLR TanDEM-X Change Maps ↗</a></details>
+      <details class="timeline-next"><summary>About the dates</summary><p class="small">These source products are composites. The observation-date slider browses acquisition metadata; it does not create separate dated elevation maps. Independent dated stereo scenes and elevation processing would be needed to measure changes within a sensor over time.</p></details>
     </section>
-    <footer>Source layers: SRTM, JAXA ALOS AW3D30, Copernicus GLO-30. Difference maps are source-surface comparisons, not validated terrain-change measurements.</footer>
+    <footer>Source layers: NASA/JPL-Caltech SRTM, JAXA ALOS AW3D30, Copernicus GLO-30. Difference maps are surface comparisons, not validated terrain changes. <a href="../PUBLIC_DEMO.md">Methods and credits</a></footer>
     <script src="static/metadata.js"></script>
     <script src="static/elevations.js"></script>
     <script src="static/timeline.js"></script>
-    <script src="app.js?v=tandemx-3"></script>
+    <script src="app.js?v=pages-1"></script>
     <script src="timeline.js"></script>
-    <script src="static/dated-maps.js"></script>
-    <script src="static/map-palettes.js"></script>
-    <script src="dated-maps.js?v=tandemx-3"></script>
   </body>
 </html>

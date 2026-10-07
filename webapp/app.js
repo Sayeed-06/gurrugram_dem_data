@@ -15,18 +15,12 @@ function unpackElevations() {
   return embeddedValues;
 }
 selectDem(current);
-function product(key) { return key==='tandemx' ? {...meta.products.alos,label:'TanDEM-X',period:'Dated observations'} : meta.products[key]; }
+function product(key) { return meta.products[key]; }
 function selectDem(key) {
-  if(key==='tandemx') {
-    current=key;document.querySelectorAll('.choice').forEach(b=>b.classList.toggle('active',b.dataset.dem===key));
-    slider.disabled=true;document.querySelector('#periodOutput').textContent='TanDEM-X dates';
-    document.querySelector('#productComparison').hidden=true;
-    document.querySelector('#mapMode').value='dated';
-    document.querySelector('#mapMode option[value="composite"]').disabled=true;
-    window.DEM_DATED_VIEW?.setSource(key);return;
-  }
-  slider.disabled=false;document.querySelector('#mapMode option[value="composite"]').disabled=false;
-  document.querySelector('#productComparison').hidden=false;
+  layer.hidden=false;baselineSelect.disabled=false;
+  document.querySelector('#pointTitle').textContent='Choose a location';document.querySelector('#pointIntro').hidden=false;
+  document.querySelector('#pointIntro').textContent='Click within the municipal area to compare elevation values through time.';
+  document.querySelector('#pointData').hidden=true;marker?.remove();marker=null;
   current = key; const p=product(key); layer.src=`static/layers/${key}.png`; title.textContent=p.label; period.textContent=p.period;
   document.querySelector("#periodOutput").textContent=p.period; slider.value=order.indexOf(key);
   document.querySelectorAll(".choice").forEach(b=>b.classList.toggle("active",b.dataset.dem===key));
@@ -34,7 +28,6 @@ function selectDem(key) {
   if (current === "alos" && baseline !== "srtm") baseline = "srtm";
   if (current === "copernicus" && baseline === "copernicus") baseline = "alos";
   updateDifference();
-  window.DEM_DATED_VIEW?.setSource(key);
 }
 document.querySelectorAll(".choice").forEach(b=>b.addEventListener("click",()=>selectDem(b.dataset.dem)));
 slider.addEventListener("input",e=>selectDem(order[+e.target.value]));
@@ -69,7 +62,6 @@ viewport.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-d
 viewport.addEventListener("pointerup",e=>{if(!drag)return;const moved=drag.moved;drag=null;if(!moved)inspect(e);});
 function mapPosition(e){const r=viewport.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2-pan.x)/(r.width*scale)+.5;const y=(e.clientY-r.top-r.height/2-pan.y)/(r.height*scale)+.5;return {x,y,screenX:e.clientX-r.left,screenY:e.clientY-r.top};}
 async function inspect(e){if(!meta)return;const p=mapPosition(e);if(p.x<0||p.x>1||p.y<0||p.y>1)return;const [left,bottom,right,top]=product(current).bounds_utm43n;const east=left+p.x*(right-left),north=top-p.y*(top-bottom);let d;
-  if(window.DEM_DATED_VIEW?.active){drawMarker(p.screenX,p.screenY);window.DEM_DATED_VIEW.inspect(p.x,p.y,east,north);return;}
   try { const res=await fetch(`/api/elevation?easting=${east}&northing=${north}`); if(res.ok) d=await res.json(); } catch (_) { /* direct file mode uses embedded values below */ }
   if (!d) d=embeddedSample(p.x,p.y,east,north);
   if(!Object.values(order).some(k=>d[k]!==null))return;drawMarker(p.screenX,p.screenY);renderInspector(d);}
