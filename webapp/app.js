@@ -62,7 +62,9 @@ viewport.addEventListener("pointermove",e=>{if(!drag)return;const dx=e.clientX-d
 viewport.addEventListener("pointerup",e=>{if(!drag)return;const moved=drag.moved;drag=null;if(!moved)inspect(e);});
 function mapPosition(e){const r=viewport.getBoundingClientRect();const x=(e.clientX-r.left-r.width/2-pan.x)/(r.width*scale)+.5;const y=(e.clientY-r.top-r.height/2-pan.y)/(r.height*scale)+.5;return {x,y,screenX:e.clientX-r.left,screenY:e.clientY-r.top};}
 async function inspect(e){if(!meta)return;const p=mapPosition(e);if(p.x<0||p.x>1||p.y<0||p.y>1)return;const [left,bottom,right,top]=product(current).bounds_utm43n;const east=left+p.x*(right-left),north=top-p.y*(top-bottom);let d;
-  try { const res=await fetch(`/api/elevation?easting=${east}&northing=${north}`); if(res.ok) d=await res.json(); } catch (_) { /* direct file mode uses embedded values below */ }
+  if(['localhost','127.0.0.1','[::1]'].includes(location.hostname)) {
+    try { const res=await fetch(`/api/elevation?easting=${east}&northing=${north}`); if(res.ok) d=await res.json(); } catch (_) { /* fall back to the bundled lookup */ }
+  }
   if (!d) d=embeddedSample(p.x,p.y,east,north);
   if(!Object.values(order).some(k=>d[k]!==null))return;drawMarker(p.screenX,p.screenY);renderInspector(d);}
 function embeddedSample(x,y,easting,northing) {
